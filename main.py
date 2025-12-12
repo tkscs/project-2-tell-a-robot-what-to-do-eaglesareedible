@@ -28,19 +28,15 @@ def spinleft(spinlefttime):
 def screenSaver():
 	while True:
 		robot.motors(FORWARD, FORWARD, 1)
-		if robot.left_sonar()<15:
+		if robot.right_sonar()<15:
 			robot.motors(FORWARD, BACKWARD, 2)
 			robot.motors(FORWARD, FORWARD, 1)
-		elif robot.right_sonar()<15:
+		elif robot.left_sonar()<15:
 				robot.motors(BACKWARD, FORWARD, 2)
 				robot.motors(FORWARD, FORWARD, 1)
 		elif robot.right_sonar()<5:
 			break
-		elif robot.left_sonar_sonar()<5:
-			break
-		userInput = input("Press enter in order to end screen saver")
-		if not userInput:
-			print("Ending screen saver")
+		elif robot.left_sonar()<5:
 			break
 userInput = input("Select one: \n square\nspinright\nspinleft\nscreensaver\nforward\nanything else to exit\n")
 if userInput=='square':
