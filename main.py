@@ -27,7 +27,7 @@ def spinleft(spinlefttime):
 	robot.motors(BACKWARD, FORWARD, spinlefttime)
 def screenSaver():
 	while True:		
-		for i in range(5):
+		for i in range(100):
 			robot.motors(FORWARD, FORWARD, 0.6)
 			if robot.right_sonar()<10:
 				robot.motors(FORWARD, BACKWARD, 2)
